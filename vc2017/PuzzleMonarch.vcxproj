@@ -13,20 +13,20 @@
     <ProjectGuid>{38E82418-F99F-4A6C-8559-A7D09B038616}</ProjectGuid>
     <RootNamespace>ApprenticeMonarch</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -54,7 +54,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;"..\..\Cinder-0.9.1\include"</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;"..\..\Cinder\include"</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;_DEBUG;PRODUCT_NAME=$(ProjectName);DEBUG;_ITERATOR_DEBUG_LEVEL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -69,11 +69,11 @@
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>"..\..\Cinder-0.9.1\include";..\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>"..\..\Cinder\include";..\include</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>cinder.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>"..\..\Cinder-0.9.1\lib\msw\$(PlatformTarget)";"..\..\Cinder-0.9.1\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)\"</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>"..\..\Cinder\lib\msw\$(PlatformTarget)";"..\..\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)\"</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -82,7 +82,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;"..\..\Cinder-0.9.1\include"</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;"..\..\Cinder\include"</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;NDEBUG;PRODUCT_NAME=$(ProjectName);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
@@ -101,11 +101,11 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>"..\..\Cinder-0.9.1\include";..\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>"..\..\Cinder\include";..\include</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>cinder.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>"..\..\Cinder-0.9.1\lib\msw\$(PlatformTarget)\";"..\..\Cinder-0.9.1\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)\"</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>"..\..\Cinder\lib\msw\$(PlatformTarget)\";"..\..\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)\"</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
@@ -128,6 +128,84 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h" />
+    <ClInclude Include="..\src\Achievements.hpp" />
+    <ClInclude Include="..\src\AppText.hpp" />
+    <ClInclude Include="..\src\Archive.hpp" />
+    <ClInclude Include="..\src\Arguments.hpp" />
+    <ClInclude Include="..\src\Asset.hpp" />
+    <ClInclude Include="..\src\AudioSession.h" />
+    <ClInclude Include="..\src\AutoRotateCamera.hpp" />
+    <ClInclude Include="..\src\Camera.hpp" />
+    <ClInclude Include="..\src\Capture.h" />
+    <ClInclude Include="..\src\Cocoa.h" />
+    <ClInclude Include="..\src\ConvertRank.hpp" />
+    <ClInclude Include="..\src\Core.hpp" />
+    <ClInclude Include="..\src\Counter.hpp" />
+    <ClInclude Include="..\src\CountExec.hpp" />
+    <ClInclude Include="..\src\Credits.hpp" />
+    <ClInclude Include="..\src\DCInAppPurchase.h" />
+    <ClInclude Include="..\src\Debug.hpp" />
+    <ClInclude Include="..\src\DebugTask.hpp" />
+    <ClInclude Include="..\src\Defines.hpp" />
+    <ClInclude Include="..\src\EaseFunc.hpp" />
+    <ClInclude Include="..\src\Event.hpp" />
+    <ClInclude Include="..\src\EventSupport.hpp" />
+    <ClInclude Include="..\src\Field.hpp" />
+    <ClInclude Include="..\src\FieldCamera.hpp" />
+    <ClInclude Include="..\src\FixedTimeExec.hpp" />
+    <ClInclude Include="..\src\Font.hpp" />
+    <ClInclude Include="..\src\Game.hpp" />
+    <ClInclude Include="..\src\GameCenter.h" />
+    <ClInclude Include="..\src\GameMain.hpp" />
+    <ClInclude Include="..\src\gl.hpp" />
+    <ClInclude Include="..\src\Intro.hpp" />
+    <ClInclude Include="..\src\JsonUtil.hpp" />
+    <ClInclude Include="..\src\Logic.hpp" />
+    <ClInclude Include="..\src\MainPart.hpp" />
+    <ClInclude Include="..\src\Model.hpp" />
+    <ClInclude Include="..\src\Os.hpp" />
+    <ClInclude Include="..\src\Panel.hpp" />
+    <ClInclude Include="..\src\Params.hpp" />
+    <ClInclude Include="..\src\Path.hpp" />
+    <ClInclude Include="..\src\PLY.hpp" />
+    <ClInclude Include="..\src\Purchase.hpp" />
+    <ClInclude Include="..\src\PurchaseDelegate.h" />
+    <ClInclude Include="..\src\Ranking.hpp" />
+    <ClInclude Include="..\src\Records.hpp" />
+    <ClInclude Include="..\src\Result.hpp" />
+    <ClInclude Include="..\src\SafeArea.h" />
+    <ClInclude Include="..\src\Score.hpp" />
+    <ClInclude Include="..\src\ScoreTest.hpp" />
+    <ClInclude Include="..\src\Settings.hpp" />
+    <ClInclude Include="..\src\Shader.hpp" />
+    <ClInclude Include="..\src\Share.h" />
+    <ClInclude Include="..\src\Sound.hpp" />
+    <ClInclude Include="..\src\Task.hpp" />
+    <ClInclude Include="..\src\TaskContainer.hpp" />
+    <ClInclude Include="..\src\TestPart.hpp" />
+    <ClInclude Include="..\src\TextCodec.hpp" />
+    <ClInclude Include="..\src\Title.hpp" />
+    <ClInclude Include="..\src\Touch.hpp" />
+    <ClInclude Include="..\src\TouchEvent.hpp" />
+    <ClInclude Include="..\src\Tutorial.hpp" />
+    <ClInclude Include="..\src\Tween.hpp" />
+    <ClInclude Include="..\src\TweenCommon.hpp" />
+    <ClInclude Include="..\src\TweenContainer.hpp" />
+    <ClInclude Include="..\src\TweenUtil.hpp" />
+    <ClInclude Include="..\src\UIBrank.hpp" />
+    <ClInclude Include="..\src\UICanvas.hpp" />
+    <ClInclude Include="..\src\UICircle.hpp" />
+    <ClInclude Include="..\src\UIDrawer.hpp" />
+    <ClInclude Include="..\src\UIRect.hpp" />
+    <ClInclude Include="..\src\UIRoundRect.hpp" />
+    <ClInclude Include="..\src\UISupport.hpp" />
+    <ClInclude Include="..\src\UITest.hpp" />
+    <ClInclude Include="..\src\UIText.hpp" />
+    <ClInclude Include="..\src\UIWidget.hpp" />
+    <ClInclude Include="..\src\UIWidgetBase.hpp" />
+    <ClInclude Include="..\src\UIWidgetsFactory.hpp" />
+    <ClInclude Include="..\src\Utility.hpp" />
+    <ClInclude Include="..\src\View.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
